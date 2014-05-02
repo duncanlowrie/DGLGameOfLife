@@ -48,6 +48,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Population: XXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-6l-fBY">
+                                        <rect key="frame" x="20" y="693" width="292" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.10000000000000001" maxValue="0.999" translatesAutoresizingMaskIntoConstraints="NO" id="ngf-6B-PaZ">
                                         <rect key="frame" x="364" y="718" width="301" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,6 +84,7 @@
                     <connections>
                         <outlet property="generationLabel" destination="kL4-yd-qYH" id="72X-dC-wa6"/>
                         <outlet property="gridView" destination="w27-S3-DMD" id="apD-sn-AHe"/>
+                        <outlet property="populationLabel" destination="VGR-6l-fBY" id="xIT-Kd-JUm"/>
                         <outlet property="resetButton" destination="Ily-N7-nrJ" id="uZa-GK-Jqr"/>
                         <outlet property="speedSlider" destination="ngf-6B-PaZ" id="jVL-Sy-S2f"/>
                         <outlet property="startStopButton" destination="WFx-dp-AYa" id="qFs-sX-84t"/>

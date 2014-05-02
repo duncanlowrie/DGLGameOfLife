@@ -38,7 +38,7 @@
     
     CGContextSetFillColorWithColor(context, redColor.CGColor);
     
-    NSLog(@"gridView drawRect");
+    //NSLog(@"gridView drawRect");
     
     //draw each cell in place...
     for(DGLCell *cell in self.grid.cells){

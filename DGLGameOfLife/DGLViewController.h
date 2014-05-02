@@ -14,12 +14,14 @@
 
 @property (nonatomic, strong)IBOutlet DGLGridView *gridView;
 @property (nonatomic, strong)IBOutlet UILabel *generationLabel;
+@property (nonatomic, strong)IBOutlet UILabel *populationLabel;
 @property (nonatomic, strong)IBOutlet UIButton *startStopButton;
 @property (nonatomic, strong)IBOutlet UIButton *resetButton;
 @property (nonatomic, strong)IBOutlet UISlider *speedSlider;
 
 @property (nonatomic, strong)DGLGrid *grid;
 @property (nonatomic)NSInteger generation;
+@property (nonatomic)NSInteger population;
 @property (nonatomic)CGFloat speed;
 @property (nonatomic)BOOL runningSimulation;
 

@@ -75,8 +75,13 @@
 
 - (void)updateGeneration:(NSInteger)newGeneration{
     self.generation = newGeneration;
-     self.generationLabel.text = [NSString stringWithFormat:@"Generation %li", (long)self.generation];
+     self.generationLabel.text = [NSString stringWithFormat:@"Generation: %li", (long)self.generation];
 }
+
+- (void)updatePopulation:(NSInteger)newPopulation{
+    self.populationLabel.text = [NSString stringWithFormat:@"Population: %li", (long)newPopulation];
+}
+
 
 - (void)tick{
     //a single simulation step...
@@ -94,9 +99,14 @@
 }
 
 - (void)updateCellStates{
+    NSInteger newPopulation = 0;
     for(DGLCell *cell in self.grid.cells){
         cell.aliveThisTurn = cell.aliveNextTurn;
+        if(cell.aliveThisTurn){
+            newPopulation++;
+        }
     }
+    [self updatePopulation:newPopulation];
 }
 
 - (void)performSimulationStep{
