@@ -21,6 +21,8 @@
 		0A98B3531912978B00BBB586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A98B3351912978B00BBB586 /* UIKit.framework */; };
 		0A98B35B1912978B00BBB586 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A98B3591912978B00BBB586 /* InfoPlist.strings */; };
 		0A98B35D1912978B00BBB586 /* DGLGameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A98B35C1912978B00BBB586 /* DGLGameOfLifeTests.m */; };
+		0A98B36819129C9C00BBB586 /* DGLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A98B36719129C9C00BBB586 /* DGLCell.m */; };
+		0A98B36B19129CA800BBB586 /* DGLGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A98B36A19129CA800BBB586 /* DGLGrid.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		0A98B3581912978B00BBB586 /* DGLGameOfLifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DGLGameOfLifeTests-Info.plist"; sourceTree = "<group>"; };
 		0A98B35A1912978B00BBB586 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A98B35C1912978B00BBB586 /* DGLGameOfLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGLGameOfLifeTests.m; sourceTree = "<group>"; };
+		0A98B36619129C9C00BBB586 /* DGLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLCell.h; sourceTree = "<group>"; };
+		0A98B36719129C9C00BBB586 /* DGLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLCell.m; sourceTree = "<group>"; };
+		0A98B36919129CA800BBB586 /* DGLGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLGrid.h; sourceTree = "<group>"; };
+		0A98B36A19129CA800BBB586 /* DGLGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLGrid.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				0A98B3431912978B00BBB586 /* Main.storyboard */,
 				0A98B3461912978B00BBB586 /* DGLViewController.h */,
 				0A98B3471912978B00BBB586 /* DGLViewController.m */,
+				0A98B36619129C9C00BBB586 /* DGLCell.h */,
+				0A98B36719129C9C00BBB586 /* DGLCell.m */,
+				0A98B36919129CA800BBB586 /* DGLGrid.h */,
+				0A98B36A19129CA800BBB586 /* DGLGrid.m */,
 				0A98B3491912978B00BBB586 /* Images.xcassets */,
 				0A98B3381912978B00BBB586 /* Supporting Files */,
 			);
@@ -253,6 +263,8 @@
 				0A98B3481912978B00BBB586 /* DGLViewController.m in Sources */,
 				0A98B3421912978B00BBB586 /* DGLAppDelegate.m in Sources */,
 				0A98B33E1912978B00BBB586 /* main.m in Sources */,
+				0A98B36B19129CA800BBB586 /* DGLGrid.m in Sources */,
+				0A98B36819129C9C00BBB586 /* DGLCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
