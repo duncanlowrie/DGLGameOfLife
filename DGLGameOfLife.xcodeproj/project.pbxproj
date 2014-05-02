@@ -23,6 +23,7 @@
 		0A98B35D1912978B00BBB586 /* DGLGameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A98B35C1912978B00BBB586 /* DGLGameOfLifeTests.m */; };
 		0A98B36819129C9C00BBB586 /* DGLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A98B36719129C9C00BBB586 /* DGLCell.m */; };
 		0A98B36B19129CA800BBB586 /* DGLGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A98B36A19129CA800BBB586 /* DGLGrid.m */; };
+		0A98B36E1913AFD300BBB586 /* DGLGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A98B36D1913AFD300BBB586 /* DGLGridView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		0A98B36719129C9C00BBB586 /* DGLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLCell.m; sourceTree = "<group>"; };
 		0A98B36919129CA800BBB586 /* DGLGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLGrid.h; sourceTree = "<group>"; };
 		0A98B36A19129CA800BBB586 /* DGLGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLGrid.m; sourceTree = "<group>"; };
+		0A98B36C1913AFD300BBB586 /* DGLGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLGridView.h; sourceTree = "<group>"; };
+		0A98B36D1913AFD300BBB586 /* DGLGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLGridView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				0A98B36719129C9C00BBB586 /* DGLCell.m */,
 				0A98B36919129CA800BBB586 /* DGLGrid.h */,
 				0A98B36A19129CA800BBB586 /* DGLGrid.m */,
+				0A98B36C1913AFD300BBB586 /* DGLGridView.h */,
+				0A98B36D1913AFD300BBB586 /* DGLGridView.m */,
 				0A98B3491912978B00BBB586 /* Images.xcassets */,
 				0A98B3381912978B00BBB586 /* Supporting Files */,
 			);
@@ -264,6 +269,7 @@
 				0A98B3421912978B00BBB586 /* DGLAppDelegate.m in Sources */,
 				0A98B33E1912978B00BBB586 /* main.m in Sources */,
 				0A98B36B19129CA800BBB586 /* DGLGrid.m in Sources */,
+				0A98B36E1913AFD300BBB586 /* DGLGridView.m in Sources */,
 				0A98B36819129C9C00BBB586 /* DGLCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +477,7 @@
 				0A98B3621912978B00BBB586 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A98B3631912978B00BBB586 /* Build configuration list for PBXNativeTarget "DGLGameOfLifeTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +486,7 @@
 				0A98B3651912978B00BBB586 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

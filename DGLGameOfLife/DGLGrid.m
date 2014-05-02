@@ -42,6 +42,17 @@
     NSInteger numberOfCells = self.numberOfRows * self.cellsPerRow;
     for(NSInteger cellCount = 0; cellCount < numberOfCells; cellCount++){
         DGLCell *cell = [[DGLCell alloc] init];
+
+        //work out yPos...
+        NSInteger row = cellCount / floorf(self.cellsPerRow);
+        CGFloat yPos = row * self.cellSize.height;
+        
+        //work out xPos...
+        CGFloat xPos = (cellCount - (row * self.cellsPerRow)) * self.cellSize.width;
+        
+        //store the cell's frame...
+        cell.cellFrame = CGRectMake(xPos, yPos, self.cellSize.width, self.cellSize.height);
+        
         [self.cells addObject:cell];
     }
     

@@ -8,20 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "DGLGrid.h"
+#import "DGLGridView.h"
 
 @interface DGLViewController : UIViewController
 
-@property (nonatomic, strong)IBOutlet UIView *gridView;
+@property (nonatomic, strong)IBOutlet DGLGridView *gridView;
 @property (nonatomic, strong)IBOutlet UILabel *generationLabel;
 @property (nonatomic, strong)IBOutlet UIButton *startStopButton;
 @property (nonatomic, strong)IBOutlet UIButton *resetButton;
 @property (nonatomic, strong)IBOutlet UISlider *speedSlider;
 
 @property (nonatomic, strong)DGLGrid *grid;
-@property (nonatomic, strong)NSMutableArray *cellViews;
 @property (nonatomic)NSInteger generation;
 @property (nonatomic)CGFloat speed;
-@property (nonatomic, strong)NSTimer *mainTimer;
 @property (nonatomic)BOOL runningSimulation;
 
 - (IBAction)startStopButtonAction:(id)sender;

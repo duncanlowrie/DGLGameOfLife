@@ -27,9 +27,6 @@
     [self speedSliderAction:self.speedSlider];
     
     [self setupGrid];
-    
-    [self refreshGrid];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,81 +42,50 @@
     self.grid = [[DGLGrid alloc] initGridWithCellSize:cellSize];
     
     //fill in random cells...
-    for(NSInteger cellCounter = 0; cellCounter < 0; cellCounter++){
+    for(NSInteger cellCounter = 0; cellCounter < 200; cellCounter++){
         NSInteger randomCellIndex = arc4random()%self.grid.cells.count-1;
         [self.grid toggleCellAtIndex:randomCellIndex];
     }
     
-    self.cellViews = [NSMutableArray array];
-    self.generation = 0;
-
-}
-
-- (void)refreshGrid{
-    //remove all previous cell views...
-    for(UIView *cellView in self.cellViews){
-        [cellView removeFromSuperview];
-    }
-    [self.cellViews removeAllObjects];
+    //pass grid reference to the grid view...
+    self.gridView.grid = self.grid;
     
-    //draw the living cells...
-    for(DGLCell *cell in self.grid.cells){
-        if(cell.aliveThisTurn){
-            [self drawCellAtIndex:[self.grid.cells indexOfObject:cell]];
-        }
-    }
+    [self updateGeneration:0];
 }
 
 - (void)resetGrid{
-    //remove all previous cell views...
-    for(UIView *cellView in self.cellViews){
-        [cellView removeFromSuperview];
-    }
-    [self.cellViews removeAllObjects];
-    
+    //kill all cells...
     for(DGLCell *cell in self.grid.cells){
         cell.aliveNextTurn = NO;
         cell.aliveThisTurn = NO;
     }
     
-    self.generation = 0;
+    [self updateGeneration:0];
+    [self refreshGridView];
 }
 
-- (void)drawCellAtIndex:(NSInteger)cellIndex{
-    
-    //work out row  and xPos first...
-    NSInteger row = cellIndex / floorf(self.grid.cellsPerRow);
-    CGFloat yPos = row * self.grid.cellSize.height;
-    
-    //work out xPos...
-    CGFloat xPos = (cellIndex - (row * self.grid.cellsPerRow)) * self.grid.cellSize.width;
-    
-    //generate a cell view at the calculated position...
-    UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake(xPos, yPos, self.grid.cellSize.width, self.grid.cellSize.height)];
-    cellView.backgroundColor = [UIColor redColor];
-
-    
-    //add the cell to the grid view...
-    [self.gridView addSubview:cellView];
-    
-    
-    //add the cell the array so it can be removed at the start of the next step...
-    [self.cellViews addObject:cellView];
-    
+- (void)refreshGridView{
+    //update the gridView...
+    [self.gridView setNeedsDisplay];
 }
-
 
 - (void)scheduleNextSimulationStep{
     [self performSelector:@selector(tick) withObject:nil afterDelay:self.speed];
 }
 
+- (void)updateGeneration:(NSInteger)newGeneration{
+    self.generation = newGeneration;
+     self.generationLabel.text = [NSString stringWithFormat:@"Generation %li", (long)self.generation];
+}
+
 - (void)tick{
     //a single simulation step...
-    self.generation++;
-    self.generationLabel.text = [NSString stringWithFormat:@"Generation %li", (long)self.generation];
+    [self updateGeneration:self.generation+1];
    
     [self updateCellStates];
     [self performSimulationStep];
+    
+    [self refreshGridView];
     
     //schedule the next sim step...
     if(self.runningSimulation){
@@ -139,7 +105,6 @@
     for(DGLCell *cell in self.grid.cells){
         [cell step];
     }
-    [self refreshGrid];
 }
 
 - (void)toggleCellAtLocation:(CGPoint)location{
@@ -151,8 +116,8 @@
         currentlyTouchedCellIndex = cellIndex;
         [self.grid toggleCellAtIndex:cellIndex];
     }
-    [self refreshGrid];
     
+    [self refreshGridView];
 }
 
 
@@ -191,7 +156,6 @@
 - (IBAction)resetButtonAction:(id)sender{
     NSLog(@"resetButtonAction fired");
     [self resetGrid];
-    //[self setupGrid];
 }
 
 - (IBAction)speedSliderAction:(id)sender{

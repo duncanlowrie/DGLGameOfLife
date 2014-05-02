@@ -13,6 +13,7 @@
 @property (nonatomic)BOOL aliveThisTurn;
 @property (nonatomic)BOOL aliveNextTurn;
 @property (nonatomic, strong)NSMutableArray *neighbourCells;
+@property (nonatomic)CGRect cellFrame;
 
 - (void)step;
 
