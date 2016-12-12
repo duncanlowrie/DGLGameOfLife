@@ -42,7 +42,7 @@
     self.grid = [[DGLGrid alloc] initGridWithCellSize:cellSize];
     
     //fill in random cells...
-    for(NSInteger cellCounter = 0; cellCounter < 200; cellCounter++){
+    for(NSInteger cellCounter = 0; cellCounter < 2000; cellCounter++){
         NSInteger randomCellIndex = arc4random()%self.grid.cells.count-1;
         [self.grid toggleCellAtIndex:randomCellIndex];
     }

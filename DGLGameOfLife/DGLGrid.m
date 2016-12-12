@@ -31,8 +31,8 @@
     //determine number of rows and columns...
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     
-    self.cellsPerRow = floorf(screenSize.height / cellSize.width);
-    self.numberOfRows = floorf(screenSize.width / cellSize.height);
+    self.cellsPerRow = floorf(screenSize.width / cellSize.width);
+    self.numberOfRows = floorf(screenSize.height / cellSize.height);
     
     
     // create cells array...
